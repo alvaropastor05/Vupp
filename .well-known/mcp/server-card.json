@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+  "name": "es.vupp/site",
+  "title": "Vupp.",
+  "version": "1.0.0",
+  "description": "Información pública de Vupp., productor musical, beatmaker e ingeniero de mix y máster en Las Rozas de Madrid.",
+  "websiteUrl": "https://vupp.es/",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://vupp.es/mcp",
+      "supportedProtocolVersions": ["2025-11-25", "2025-06-18", "2025-03-26"]
+    }
+  ],
+  "serverInfo": {
+    "name": "vupp-site",
+    "version": "1.0.0"
+  },
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://vupp.es/mcp"
+  },
+  "capabilities": {
+    "tools": {}
+  }
+}

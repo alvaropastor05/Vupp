@@ -64,6 +64,12 @@
     Header set Cache-Control "no-cache, must-revalidate"
   </FilesMatch>
 
+  # Ficha MCP: metadatos públicos, legibles desde cualquier origen
+  <FilesMatch "^server-card\.json$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET"
+  </FilesMatch>
+
   # Images & fonts: long cache
   <FilesMatch "\.(webp|jpg|jpeg|png|svg|avif|ico|woff|woff2)$">
     Header set Cache-Control "public, max-age=2592000"
@@ -95,6 +101,9 @@
   RewriteEngine On
   RewriteCond %{HTTP_ACCEPT} text/markdown [NC]
   RewriteRule ^(index\.html)?$ /index.md [L]
+
+  # Servidor MCP: la dirección pública /mcp la atiende mcp.php
+  RewriteRule ^mcp/?$ /mcp.php [L]
 </IfModule>
 
 # ----- Gzip compression for text assets -----
