@@ -17,10 +17,11 @@
 - Mix y máster: mezcla y masterización de temas listos para cualquier plataforma.
 
 ## Enlaces
-- Web: https://vupp.es/
-- Spotify: https://open.spotify.com/artist/2iUPXJJ8UZfMhEjfoeYB7q
-- Instagram: https://www.instagram.com/prod.vupp/
-- TikTok: https://www.tiktok.com/@prod.vupp
+- [Web](https://vupp.es/): página principal de Vupp.
+- [Versión en Markdown](https://vupp.es/index.md): contenido de la web en texto para agentes
+- [Spotify](https://open.spotify.com/artist/2iUPXJJ8UZfMhEjfoeYB7q): música y perfil de artista
+- [Instagram](https://www.instagram.com/prod.vupp/): perfil @prod.vupp
+- [TikTok](https://www.tiktok.com/@prod.vupp): perfil @prod.vupp
 
 ## Contacto
-Para producción, grabación, mezcla o máster, el canal de contacto es Instagram (@prod.vupp).
+- [Instagram](https://www.instagram.com/prod.vupp/): canal de contacto para producción, grabación, mezcla o máster (@prod.vupp)

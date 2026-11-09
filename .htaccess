@@ -43,8 +43,20 @@
 # ----- Cache-Control headers -----
 <IfModule mod_headers.c>
   # HTML always fresh
-  <FilesMatch "\.(html|htm)$">
+  <FilesMatch "\.(html|htm|md)$">
     Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # Portada: anuncia llms.txt y la versión Markdown (RFC 8288)
+  <FilesMatch "^index\.html$">
+    Header set Link "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </index.md>; rel=\"alternate\"; type=\"text/markdown\""
+    Header append Vary "Accept"
+  </FilesMatch>
+
+  # Versión Markdown: la página canónica sigue siendo la portada
+  <FilesMatch "^index\.md$">
+    Header set Link "<https://vupp.es/>; rel=\"canonical\""
+    Header append Vary "Accept"
   </FilesMatch>
 
   # JS / CSS / JSON: revalidate every visit
@@ -73,6 +85,16 @@
   AddType font/woff2 .woff2
   AddType font/woff .woff
   AddType image/svg+xml .svg
+  AddType text/markdown .md
+  AddCharset utf-8 .md
+</IfModule>
+
+# ----- Agentes de IA: sirve la portada en Markdown si la piden con Accept -----
+# Los navegadores no envían text/markdown, así que los visitantes siguen viendo la web.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_ACCEPT} text/markdown [NC]
+  RewriteRule ^(index\.html)?$ /index.md [L]
 </IfModule>
 
 # ----- Gzip compression for text assets -----
