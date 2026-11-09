@@ -49,13 +49,13 @@
 
   # Portada: anuncia llms.txt y la versión Markdown (RFC 8288)
   <FilesMatch "^index\.html$">
-    Header set Link "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </index.md>; rel=\"alternate\"; type=\"text/markdown\""
+    Header set Link '</llms.txt>; rel="describedby"; type="text/plain", </index.md>; rel="alternate"; type="text/markdown"'
     Header append Vary "Accept"
   </FilesMatch>
 
   # Versión Markdown: la página canónica sigue siendo la portada
   <FilesMatch "^index\.md$">
-    Header set Link "<https://vupp.es/>; rel=\"canonical\""
+    Header set Link '<https://vupp.es/>; rel="canonical"'
     Header append Vary "Accept"
   </FilesMatch>
 
